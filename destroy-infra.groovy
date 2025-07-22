@@ -16,13 +16,13 @@ pipeline {
 
         stage('Terraform Init') {
             steps {
-                sh 'terraform init'
+                bat 'terraform init'
             }
         }
 
         stage('Terraform Destroy') {
             steps {
-                sh 'terraform destroy -auto-approve'
+                bat 'terraform destroy -auto-approve'
             }
         }
     }
