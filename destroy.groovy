@@ -10,7 +10,7 @@ pipeline {
     stages {
         stage('Clone Terraform Code') {
             steps {
-                git 'https://github.com/Naveen-5288/Project-02.git'
+                git branch: 'test', url: 'https://github.com/Naveen-5288/Project-02.git'
             }
         }
 
@@ -22,7 +22,7 @@ pipeline {
 
         stage('Terraform Destroy') {
             steps {
-                bat 'terraform destroy -auto-approve'
+                bat 'terraform destroy -auto-approve -var-file="terraform.tfvars"'
             }
         }
     }
