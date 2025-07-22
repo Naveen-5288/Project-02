@@ -1,8 +1,9 @@
 pipeline {
   agent any
   environment {
-    aws_access_key_id     = credentials('aws-access-key-id')
-    aws_secret_access_key = credentials('aws-secret-access-key')
+    AWS_ACCESS_KEY_ID     = credentials('aws-access-key-id')
+    AWS_SECRET_ACCESS_KEY = credentials('aws-secret-access-key')
+    AWS_DEFAULT_REGION    = 'ap-south-1' // replace if using a different region
   }
   stages {
     stage('Terraform Init') {
